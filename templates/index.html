@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Game World Builder</title>
+  <meta name="description" content="Generate complete game worlds with factions, lore, quests, and a playable mini-game — powered by LLaMA 3.3"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+
+<!-- ══════════════════ HOME PAGE (LANDING) ══════════════════ -->
+<div id="homeView" class="home-view">
+  <div class="home-hero">
+    <div class="hero-badge" style="margin: 0 auto 1.5rem; width: max-content;">✦ Generative AI · LLaMA 3.3 · NVIDIA NIM (SD3)</div>
+    <h1 class="home-title">AI Game World Builder</h1>
+    <p class="home-subtitle">Forge detailed lore, procedural geography, and high-fidelity concept art from a single vision. Explore the internal architecture of world-building through AI.</p>
+    <button class="btn btn-primary" id="startBuilderBtn" style="font-size: 1.1rem; padding: 0.9rem 2.2rem; border-radius: 100px; font-weight: 600;">Initialize Horizon Protocol</button>
+  </div>
+
+  <div class="home-container">
+    <div class="home-section-title">Aethel Pipeline Components</div>
+    <div class="home-features">
+      
+      <!-- Feature 1: World Mind -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>🌍 World Mind</h3><span class="step-num">01</span></div>
+        <p>Establishes the core metaphysical foundation, tone, and the primary protagonist of the universe.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> User prompt / Theme</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Theme, Tagline, Environment, Protagonist Profile</div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Cartography -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>🗺️ Cartography</h3><span class="step-num">02</span></div>
+        <p>Generates geographical distribution, climate zones, and a custom procedural SVG coordinate map.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> Environment Tone</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Continents, Major Cities, Natural Wonders, SVG Map</div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Societies -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>🏛️ Societies</h3><span class="step-num">03</span></div>
+        <p>Populates the world with diverse civilizations, defining their unique races, cultures, and visual traits.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> World Geography</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Race details, Cultural descriptors, Visual aesthetics</div>
+        </div>
+      </div>
+
+      <!-- Feature 4: Factions -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>⚔️ Factions</h3><span class="step-num">04</span></div>
+        <p>Maps the political landscape. Defines major powers, their leaders, and their interactive relationships.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> Civilizations</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Faction names, IDEOLOGY, Leaders, Relationship Web</div>
+        </div>
+      </div>
+
+      <!-- Feature 5: Chronicles -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>📜 Chronicles</h3><span class="step-num">05</span></div>
+        <p>Compiles creation myths, ancient prophecies, and a linear timeline of major historical eras.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> Faction History</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Mythology, Legends, Villains, Prophecy, Eras</div>
+        </div>
+      </div>
+
+      <!-- Feature 6: Adventures -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>📋 Adventures</h3><span class="step-num">06</span></div>
+        <p>Constructs dynamic questlines with objectives, difficulty tiers, and narrative twists.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> World Lore & Politics</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Quests, Objectives, Difficulty, Rewards, Narrative Twists</div>
+        </div>
+      </div>
+
+      <!-- Feature 7: Blueprints -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>🎮 Blueprints</h3><span class="step-num">07</span></div>
+        <p>Transposes narrative quests into mechanical level design logic and obstacle placement.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> Selected Quest</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Layout, Enemies, Obstacles, Collectibles, Win/Loss Conditions</div>
+        </div>
+      </div>
+
+      <!-- Feature 8: Visions -->
+      <div class="home-feature-card">
+        <div class="card-glow"></div>
+        <div class="feature-header"><h3>🎨 Visions</h3><span class="step-num">08</span></div>
+        <p>Crafts high-fidelity concept art using NVIDIA NIM (SD3) based on AI-refined image prompts.</p>
+        <div class="io-grid">
+          <div class="io-item"><strong>INPUT:</strong> Element Descriptions</div>
+          <div class="io-item"><strong>OUTPUT:</strong> Character Portraits, Scene Renders, Asset Art</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ BUILDER APP ══════════════════ -->
+<div id="appView" class="hidden">
+
+<!-- ══════════════════ HERO HEADER ══════════════════ -->
+<header class="hero-header">
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Generative AI · LLaMA 3.3 · NVIDIA NIM (SD3)</div>
+    <h1 class="hero-title">AI Game World Builder</h1>
+    <p class="hero-subtitle">World theme → Geography → Civilizations → Factions → Lore → Quests → Level → AI Concept Art</p>
+
+    <form id="generateForm" class="generate-form" autocomplete="off">
+      <div class="input-group">
+        <span class="input-icon">🌐</span>
+        <input id="themeInput" type="text"
+          placeholder="e.g. &quot;Cyberpunk hacker world&quot;, &quot;Fantasy dragon realm&quot;, &quot;Space empire&quot;…"
+          maxlength="150" required/>
+      </div>
+      <button id="generateBtn" type="submit" class="btn-generate">
+        <span class="btn-text">Generate World</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </form>
+
+    <!-- Pipeline -->
+    <div id="pipelineProgress" class="pipeline hidden">
+      <div class="pipeline-steps">
+        <div class="pipe-step" data-step="world">🌍<span>World</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="geography">🗺️<span>Map</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="civilizations">🏛️<span>Civs</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="politics">⚔️<span>Factions</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="lore">📜<span>Lore</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="quests">📋<span>Quests</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="level">🎮<span>Level</span></div>
+        <div class="pipe-arrow">›</div>
+        <div class="pipe-step" data-step="image_prompts">🎨<span>Images</span></div>
+      </div>
+      <div id="statusLabel" class="status-label">Initializing…</div>
+      <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════ ACTION BAR (shown after generation) ══════════════════ -->
+<div id="actionBar" class="action-bar hidden">
+  <div class="action-bar-inner">
+    <div class="gpu-badge" id="gpuBadge">
+      <span id="gpuIcon">⚪</span> <span id="gpuLabel">Checking GPU…</span>
+    </div>
+    <div class="action-btns">
+      <button class="btn-action" id="exportBtn" title="Download everything">
+        ⬇️ Export World Bible
+      </button>
+      <button class="btn-action btn-regen" id="regenBtn" title="Generate a new world">
+        🔄 New World
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ MAIN DASHBOARD ══════════════════ -->
+<main id="dashboard" class="dashboard hidden">
+
+  <!-- TAB NAV -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="overview">🌍 Overview</button>
+    <button class="tab-btn" data-tab="geography">🗺️ Geography</button>
+    <button class="tab-btn" data-tab="civilizations">🏛️ Civilizations</button>
+    <button class="tab-btn" data-tab="factions">⚔️ Factions</button>
+    <button class="tab-btn" data-tab="lore">📜 Lore</button>
+    <button class="tab-btn" data-tab="quests">📋 Quests</button>
+    <button class="tab-btn" data-tab="level">🎮 Level</button>
+    <button class="tab-btn" data-tab="images">🎨 Images</button>
+  </nav>
+
+  <!-- ── OVERVIEW TAB ── -->
+  <section class="tab-panel active" id="tab-overview">
+    <div class="world-banner" id="worldBanner">
+      <div class="banner-left">
+        <div class="world-name" id="worldName">—</div>
+        <div class="world-tagline" id="worldTagline">—</div>
+        <div class="world-badges" id="worldBadges"></div>
+      </div>
+      <div class="banner-right">
+        <div class="stat-card"><div class="stat-label">Continents</div><div class="stat-val" id="statContinents">—</div></div>
+        <div class="stat-card"><div class="stat-label">Factions</div><div class="stat-val" id="statFactions">—</div></div>
+        <div class="stat-card"><div class="stat-label">Quests</div><div class="stat-val" id="statQuests">—</div></div>
+        <div class="stat-card"><div class="stat-label">Civilizations</div><div class="stat-val" id="statCivs">—</div></div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card"><div class="card-header">🌿 Environment</div><p id="worldEnvironment">—</p></div>
+      <div class="info-card"><div class="card-header">✨ Magic / Tech System</div><p id="worldMagic">—</p></div>
+    </div>
+    <div class="two-col">
+      <div class="info-card"><div class="card-header">🎭 Tone & Atmosphere</div><p id="worldTone">—</p></div>
+      <div class="info-card">
+        <div class="card-header">🗺️ Continents</div>
+        <ul id="worldContinents" class="item-list"></ul>
+      </div>
+    </div>
+
+    <!-- Character Card with Stat Bars -->
+    <div class="character-card" id="characterCard">
+      <div class="char-header">
+        <div class="char-avatar" id="charAvatar">🧙</div>
+        <div>
+          <div class="char-title">Player Character</div>
+          <div class="char-subtitle" id="charSubtitle">Your hero</div>
+        </div>
+        <div class="char-prompt-btn-wrap">
+          <button class="btn-copy-prompt hidden" id="charPromptBtn" title="Copy AI image prompt">
+            🎨 Copy Image Prompt
+          </button>
+        </div>
+      </div>
+      <p id="characterDesc">—</p>
+
+      <!-- RPG Stat Bars -->
+      <div class="stat-bars" id="statBars">
+        <div class="stat-bar-row"><span class="stat-bar-label">⚔️ Strength</span><div class="stat-bar-track"><div class="stat-bar-fill" id="statStr"></div></div><span class="stat-bar-val" id="statStrVal"></span></div>
+        <div class="stat-bar-row"><span class="stat-bar-label">✨ Magic</span><div class="stat-bar-track"><div class="stat-bar-fill magic" id="statMag"></div></div><span class="stat-bar-val" id="statMagVal"></span></div>
+        <div class="stat-bar-row"><span class="stat-bar-label">🛡️ Defence</span><div class="stat-bar-track"><div class="stat-bar-fill defence" id="statDef"></div></div><span class="stat-bar-val" id="statDefVal"></span></div>
+        <div class="stat-bar-row"><span class="stat-bar-label">💨 Agility</span><div class="stat-bar-track"><div class="stat-bar-fill agility" id="statAgi"></div></div><span class="stat-bar-val" id="statAgiVal"></span></div>
+        <div class="stat-bar-row"><span class="stat-bar-label">🧠 Wisdom</span><div class="stat-bar-track"><div class="stat-bar-fill wisdom" id="statWis"></div></div><span class="stat-bar-val" id="statWisVal"></span></div>
+      </div>
+
+      <div class="char-actions" id="charActions"></div>
+    </div>
+
+    <div class="info-card" style="margin-top:1.5rem">
+      <div class="card-header">🏔️ Notable Landmarks</div>
+      <div id="worldLandmarks" class="landmark-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── GEOGRAPHY TAB ── -->
+  <section class="tab-panel" id="tab-geography">
+    <!-- SVG World Map -->
+    <div class="map-container">
+      <div class="map-header">
+        <span class="card-header" style="margin:0">🗺️ Procedural World Map</span>
+        <span class="map-badge">AI-Generated</span>
+      </div>
+      <div id="worldMapContainer" class="world-map-wrap">
+        <div class="map-placeholder">Map generates after world creation…</div>
+      </div>
+    </div>
+
+    <div class="section-title">Climate Zones</div>
+    <div id="climateZones" class="grid-3"></div>
+    <div class="section-title">Major Cities</div>
+    <div id="majorCities" class="grid-3"></div>
+    <div class="section-title">Natural Wonders</div>
+    <div id="naturalWonders" class="grid-3"></div>
+    <div class="two-col" style="margin-top:1.5rem">
+      <div><div class="section-title">Dangerous Regions</div><div id="dangerousRegions" class="grid-1"></div></div>
+      <div><div class="section-title">Trade Routes</div><div id="tradeRoutes" class="grid-1"></div></div>
+    </div>
+  </section>
+
+  <!-- ── CIVILIZATIONS TAB ── -->
+  <section class="tab-panel" id="tab-civilizations">
+    <div id="civilizationsContainer" class="civ-grid"></div>
+  </section>
+
+  <!-- ── FACTIONS TAB ── -->
+  <section class="tab-panel" id="tab-factions">
+    <div id="factionsContainer" class="factions-grid"></div>
+
+    <!-- Faction Relationship Web (SVG canvas) -->
+    <div class="section-title">Faction Relationship Web</div>
+    <div class="rel-web-wrap">
+      <svg id="factionRelSvg" class="faction-rel-svg" viewBox="0 0 700 320"></svg>
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div class="info-card alliance-card"><div class="card-header">🤝 Major Alliance</div><p id="majorAlliance">—</p></div>
+      <div class="info-card war-card"><div class="card-header">⚔️ Major War</div><p id="majorWar">—</p></div>
+    </div>
+  </section>
+
+  <!-- ── LORE TAB ── -->
+  <section class="tab-panel" id="tab-lore">
+    <div class="info-card prophecy-card">
+      <div class="card-header">🔮 Ancient Prophecy</div>
+      <p class="prophecy-text" id="prophecyText">—</p>
+    </div>
+    <div class="two-col" style="margin-top:1.5rem">
+      <div class="info-card"><div class="card-header">🌌 Creation Myth</div><p id="creationMyth">—</p></div>
+      <div class="info-card danger-card"><div class="card-header">☠️ Forbidden Knowledge</div><p id="forbiddenKnowledge">—</p></div>
+    </div>
+    <div class="section-title">Historical Eras</div>
+    <div id="historicalEras" class="timeline"></div>
+    <div class="two-col" style="margin-top:1.5rem">
+      <div><div class="section-title">Legendary Heroes</div><div id="legendaryHeroes" class="hero-grid"></div></div>
+      <div><div class="section-title">Great Villains</div><div id="greatVillains" class="villain-grid"></div></div>
+    </div>
+  </section>
+
+  <!-- ── QUESTS TAB ── -->
+  <section class="tab-panel" id="tab-quests">
+    <div id="questsContainer" class="quests-grid"></div>
+  </section>
+
+  <!-- ── LEVEL TAB ── -->
+  <section class="tab-panel" id="tab-level">
+    <div class="level-header-card">
+      <div class="level-name" id="levelName">—</div>
+      <p class="level-env" id="levelEnvironment">—</p>
+    </div>
+    <div class="two-col" style="margin-top:1.5rem">
+      <div class="info-card"><div class="card-header">🗺️ Level Layout</div><div id="levelLayout" class="layout-list"></div></div>
+      <div>
+        <div class="info-card danger-card" style="margin-bottom:1rem"><div class="card-header">👾 Enemies</div><div id="levelEnemies" class="enemy-list"></div></div>
+        <div class="info-card warning-card"><div class="card-header">🪨 Obstacles</div><div id="levelObstacles" class="obstacle-list"></div></div>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:1rem">
+      <div class="info-card success-card"><div class="card-header">🏆 Win Condition</div><p id="levelWin">—</p></div>
+      <div class="info-card danger-card"><div class="card-header">💀 Lose Condition</div><p id="levelLose">—</p></div>
+    </div>
+    <div class="two-col" style="margin-top:1rem">
+      <div class="info-card"><div class="card-header">⏱️ Time Limit</div><p id="levelTime" style="font-size:2rem;font-weight:700;text-align:center;color:var(--accent)">—</p></div>
+      <div class="info-card"><div class="card-header">💎 Collectibles</div><div id="levelCollectibles" class="collectible-list"></div></div>
+    </div>
+  </section>
+
+  <!-- ── IMAGES & PROMPTS TAB ── -->
+  <section class="tab-panel" id="tab-images">
+    <div class="images-header">
+      <div>
+        <h2 class="images-title">🎨 AI Image Prompts & Gallery</h2>
+        <p class="images-subtitle">
+          Use these AI-crafted prompts in <b>Midjourney, DALL-E, Stable Diffusion</b> or generate directly if a GPU is detected.
+        </p>
+      </div>
+      <div class="gpu-info-card" id="gpuInfoCard">
+        <div id="gpuInfoIcon">⚙️</div>
+        <div>
+          <div class="gpu-info-title" id="gpuInfoTitle">Checking GPU…</div>
+          <div class="gpu-info-sub" id="gpuInfoSub">NVIDIA NIM · SD3 Medium</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="imagesGrid" class="images-grid">
+      <div class="images-empty">Generate a world first to see image prompts here.</div>
+    </div>
+  </section>
+
+
+
+</main>
+</div> <!-- /appView -->
+
+<!-- Copy-to-clipboard toast -->
+<div id="copyToast" class="copy-toast hidden">✅ Copied to clipboard!</div>
+
+<!-- Error toast -->
+<div id="errorToast" class="error-toast hidden">
+  <span id="errorMessage"></span>
+  <button onclick="document.getElementById('errorToast').classList.add('hidden')">✕</button>
+</div>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
