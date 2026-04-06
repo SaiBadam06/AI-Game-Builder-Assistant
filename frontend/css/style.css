@@ -40,6 +40,15 @@ body {
   min-height: 100vh;
 }
 
+/* ── UTILITY ─────────────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ── APP VIEW WRAPPER ────────────────────────────── */
+#appView {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
 /* ── HERO HEADER ─────────────────────────────────── */
 .hero-header {
   background: linear-gradient(135deg, #1a1f36 0%, #2d2a72 50%, #1d1640 100%);
