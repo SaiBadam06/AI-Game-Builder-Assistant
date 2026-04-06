@@ -382,11 +382,11 @@ function renderLevel(d) {
 function renderGame(d) {
   el('gamePlaceholder').classList.add('hidden');
   const iframe = el('gameFrame');
-  iframe.src = '/game/' + d.file_name;
+  iframe.src = `${API_BASE_URL}/game/${d.file_name}`;
   iframe.classList.remove('hidden');
 
   const link = el('openGameLink');
-  link.href = '/game/' + d.file_name;
+  link.href = `${API_BASE_URL}/game/${d.file_name}`;
   link.classList.remove('hidden');
   
   // Show the LLM Prompt / Code logic view
@@ -566,7 +566,7 @@ el('regenBtn').addEventListener('click', () => {
     renderWorld(d);
     markStepDone('world');
   });
- Riverside
+
   evtSrc.addEventListener('geography', ev => {
     let d; try { d = JSON.parse(ev.data); } catch(e) { console.error('JSON parse error', e, ev.data); return; }
     renderGeography(d);

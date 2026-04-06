@@ -32,8 +32,6 @@ def _extract_list(label: str, text: str) -> list:
         else:
             results.append({'name': line, 'description': ''})
     return results
-
-
 def generate_lore(world: dict, politics: dict) -> dict:
     world_desc = world.get('raw', world.get('environment', ''))
     factions_raw = politics.get('raw', '')

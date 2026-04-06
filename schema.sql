@@ -10,7 +10,6 @@ DROP TABLE IF EXISTS politics CASCADE;
 DROP TABLE IF EXISTS civilizations CASCADE;
 DROP TABLE IF EXISTS geography CASCADE;
 DROP TABLE IF EXISTS worlds CASCADE;
-
 -- 1. Worlds: Main entry for each generation
 CREATE TABLE worlds (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -24,7 +23,6 @@ CREATE TABLE worlds (
     raw_output TEXT,
     created_at TIMESTAMPTZ DEFAULT now()
 );
-
 -- 2. Geography: Climate zones, cities, wonders, routes
 CREATE TABLE geography (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -37,7 +35,6 @@ CREATE TABLE geography (
     raw_output TEXT,
     created_at TIMESTAMPTZ DEFAULT now()
 );
-
 -- 3. Civilizations
 CREATE TABLE civilizations (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -46,7 +43,6 @@ CREATE TABLE civilizations (
     raw_output TEXT,
     created_at TIMESTAMPTZ DEFAULT now()
 );
-
 -- 4. Politics: Factions, alliances, wars
 CREATE TABLE politics (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

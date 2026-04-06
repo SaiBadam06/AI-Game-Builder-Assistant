@@ -6,7 +6,6 @@ import re
 from model_loader import generate_text
 from prompts import LEVEL_PROMPT
 
-
 def _clean(text: str) -> str:
     return re.sub(r'\*{1,3}', '', text).strip()
 
